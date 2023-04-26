@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import { Canvas } from '@react-three/fiber'
 
 
 export default function Home() {
@@ -14,9 +15,17 @@ export default function Home() {
         <link rel="icon" href="./favicon.ico" />
       </Head>
       
-      <main>
-        <div className='flex justify-center items-center'>Initial Setup</div>
-      </main>
+      <Canvas
+        shadows
+        camera={ {
+            fov: 45,
+            near: 0.1,
+            far: 200,
+            position: [ - 4, 3, 6 ]
+        } }
+      >
+        
+      </Canvas>
     </>
 
   )
