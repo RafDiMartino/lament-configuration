@@ -10,7 +10,8 @@ export default function Home() {
 
   const { color } = useControls({
     color: '#000000'
-})
+  })
+
   return (
     <>
 
@@ -22,6 +23,7 @@ export default function Home() {
       </Head>
       
       <Canvas
+        flat
         shadows
         camera={ {
             fov: 45,
