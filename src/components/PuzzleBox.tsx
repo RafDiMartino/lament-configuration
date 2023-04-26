@@ -4,7 +4,7 @@ import { Perf } from 'r3f-perf'
 import { useControls } from 'leva'
 
 export default function PuzzleBox(){
-    const model = useGLTF('./lament-optimised2.glb')    
+    const model = useGLTF('./hamburger.glb')    
 
     const { intensity } = useControls({
         intensity: {
@@ -22,7 +22,7 @@ export default function PuzzleBox(){
             <OrbitControls makeDefault />
             <directionalLight castShadow  position={ [ 1, 2, 3 ] } intensity={ intensity } />
             <ambientLight intensity={ intensity }/>
-            <primitive object={model.scene} scale={20} />
+            <primitive object={model.scene} scale={0.25} />
         </>
     )
 
