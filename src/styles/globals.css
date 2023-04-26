@@ -13,3 +13,7 @@ body,
   background: rgb(16, 18, 31);
 }
 
+canvas {
+  width: 100vh;
+  height: 100vh;
+}
