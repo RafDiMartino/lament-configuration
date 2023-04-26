@@ -4,7 +4,7 @@ import { Perf } from 'r3f-perf'
 import { useControls } from 'leva'
 
 export default function PuzzleBox(){
-    const model = useGLTF('./lament.glb')    
+    const model = useGLTF('./lamentlargecompressed.glb')    
 
     const { intensity } = useControls({
         intensity: {
