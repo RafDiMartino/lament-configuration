@@ -8,9 +8,9 @@ import { useControls } from 'leva'
 
 export default function Home() {
 
-  const { color } = useControls({
-    color: '#000000'
-  })
+  // const { color } = useControls({
+  //   color: '#000000'
+  // })
 
   return (
     <>
@@ -32,7 +32,7 @@ export default function Home() {
             position: [ - 4, 3, 6 ]
         } }
       >
-        <color args={[color]} attach='background'/>
+        <color args={['#000000']} attach='background'/>
         <Center>
           <PuzzleBox />
         </Center>
