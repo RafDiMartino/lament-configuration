@@ -5,7 +5,7 @@ import { Canvas } from '@react-three/fiber'
 import PuzzleBox from 'component/components/PuzzleBox'
 import { Center } from '@react-three/drei'
 import { useControls } from 'leva'
-
+import * as THREE from 'three'
 export default function Home() {
 
   // const { color } = useControls({
@@ -23,7 +23,11 @@ export default function Home() {
       </Head>
       
       <Canvas
+        // gl={{ antialias: true, toneMapping: THREE.NoToneMapping }}
+        // linear
+        // colorManagement={false}
         flat
+        linear
         shadows
         camera={ {
             fov: 45,

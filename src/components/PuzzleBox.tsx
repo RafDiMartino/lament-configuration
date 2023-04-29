@@ -2,9 +2,11 @@ import { useGLTF } from '@react-three/drei'
 import { OrbitControls } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import { useControls } from 'leva'
+import LamentConfig from './LamentConfig'
 
 export default function PuzzleBox(){
-    const model = useGLTF('./lament2k4k.glb')    
+    // const model = useGLTF('./lament-final-nom-opt.glb')    
+    // const modelFlat = useGLTF('./lament-final-opt.glb')    
 
     // const { intensity } = useControls({
     //     intensity: {
@@ -17,12 +19,17 @@ export default function PuzzleBox(){
 
     return(
         <>
-            {/* <Perf position="top-left" /> */}
+            <Perf position="top-left" />
 
             <OrbitControls makeDefault />
-            <directionalLight castShadow  position={ [ 1, 2, 3 ] } intensity={ 2 } />
-            <ambientLight intensity={ 3 }/>
-            <primitive object={model.scene} scale={1.5} />
+            <directionalLight castShadow  position={ [ 1, 2, 3 ] } intensity={ 5 } />
+            <directionalLight castShadow  position={ [ -1, 2, -3 ] } intensity={ 5 } />
+            {/* <ambientLight intensity={ 3 }/> */}
+            {/* <primitive object={model.scene} scale={1} >
+                <meshStandardMaterial color="red" transparent />
+            </primitive> */}
+            {/* <primitive object={modelFlat.scene} scale={1} /> */}
+            <LamentConfig/>
         </>
     )
 
