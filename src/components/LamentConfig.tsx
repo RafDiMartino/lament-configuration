@@ -15,6 +15,13 @@ export default function LamentConfig(props : any) {
     metalnessMap: './textures/metal/Metal042A_4K_Metalness.jpg'
   })
 
+  const woodTexture = useTexture({
+    map: './textures/wood/Wood027_2K_Color.jpg',
+    displacementMap: './textures/wood/Wood027_2K_Displacement.jpg',
+    normalMap: './textures/wood/Wood027_2K_NormalGL.jpg',
+    roughnessMap: './textures/wood/Wood027_2K_Roughness.jpg',
+  })
+  
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -25,6 +32,7 @@ export default function LamentConfig(props : any) {
         material={nodes.Cube.material}
         position={[0, 1.01, 0]}
       >
+        <meshStandardMaterial {...woodTexture} displacementScale={0.00001}/>
       </mesh>
       <mesh
         name="Face3"
@@ -35,7 +43,12 @@ export default function LamentConfig(props : any) {
         position={[-1, 1.01, -0.03]}
         rotation={[0, 0, -Math.PI / 2]}
         scale={[18.7, 0.19, 18.66]}
-      />
+      >
+        <meshStandardMaterial 
+          {...metalTexture}
+          displacementScale={0.00001}
+        />
+      </mesh>
       <mesh
         name="Face5"
         castShadow
@@ -45,7 +58,12 @@ export default function LamentConfig(props : any) {
         position={[1, 1.02, -0.03]}
         rotation={[Math.PI / 2, 0, -Math.PI / 2]}
         scale={[18.65, 0.15, 18.66]}
-      />
+      >
+        <meshStandardMaterial 
+          {...metalTexture}
+          displacementScale={0.00001}
+        />
+      </mesh>
       <mesh
         name="Face4"
         castShadow
@@ -55,7 +73,12 @@ export default function LamentConfig(props : any) {
         position={[0, 1.02, 1]}
         rotation={[Math.PI / 2, -Math.PI / 2, 0]}
         scale={[18.65, 0.16, 18.65]}
-      />
+      >
+        <meshStandardMaterial 
+          {...metalTexture}
+          displacementScale={0.00001}
+        />
+      </mesh>
       <mesh
         name="Face6"
         castShadow
@@ -65,7 +88,12 @@ export default function LamentConfig(props : any) {
         position={[-0.02, 1.02, -1]}
         rotation={[Math.PI / 2, -Math.PI / 2, 0]}
         scale={[18.65, 0.12, 18.66]}
-      />
+      >
+        <meshStandardMaterial 
+          {...metalTexture}
+          displacementScale={0.00001}
+        />
+      </mesh>
       <mesh
         name="Face1"
         castShadow
@@ -78,6 +106,7 @@ export default function LamentConfig(props : any) {
         <meshStandardMaterial 
           {...metalTexture}
           displacementScale={0.00001}
+          metalness={0.02}
         />
       </mesh>
       <mesh
@@ -88,7 +117,12 @@ export default function LamentConfig(props : any) {
         material={nodes.Face2.material}
         position={[0.01, 0.01, 0]}
         scale={[18.65, 7.06, 18.66]}
-      />
+      >
+        <meshStandardMaterial 
+          {...metalTexture}
+          displacementScale={0.00001}
+        />
+      </mesh>
     </group>
   );
 }
