@@ -19,9 +19,9 @@ export default function PuzzleBox(){
 
             <OrbitControls makeDefault />
            
-            <Lights />
+            {/* <Lights /> */}
 
-            <Environment map={envMap}/>
+            <Environment map={envMap} />
 
             <Suspense fallback={null}>
                 <LamentTS/>
