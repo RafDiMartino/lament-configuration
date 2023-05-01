@@ -1,32 +1,43 @@
-import { useGLTF, OrbitControls, useHelper, useTexture, Plane } from '@react-three/drei'
+import { useGLTF, OrbitControls, useHelper, useTexture, Plane, Float, ContactShadows, useEnvironment, Environment } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import { useControls } from 'leva'
 import LamentConfig from './LamentConfig'
-import { PointLight, PointLightHelper, DirectionalLight, DirectionalLightHelper, AmbientLight } from 'three'
 import { useRef, Suspense } from 'react'
+import LamentTS from './LamentTS'
+import Lights from './Lights'
 
 export default function PuzzleBox(){
+
     const model = useGLTF('./lament-final-opt.glb')    
 
-    const poiLightRef = useRef<PointLight>(null!)
-    const dirLightRef = useRef<DirectionalLight>(null!)
-    useHelper(poiLightRef, PointLightHelper, 1, "red")
-    useHelper(dirLightRef, DirectionalLightHelper, 1, "red")
+    // const envMap = useEnvironment({files: './neon_photostudio_2k.hdr'})
+    const envMap = useEnvironment({path: './enviroment'})
 
     return(
         <>
             <Perf position="top-left" />
 
             <OrbitControls makeDefault />
-            <pointLight ref={poiLightRef} castShadow  position={ [ 5, 5, 0 ] } intensity={ 1.5 } shadow-normalBias={0.04}/>
-            <directionalLight ref={dirLightRef} castShadow  position={ [ -1, -7, -5 ] } intensity={ 1 } shadow-normalBias={0.04}/>
-            <ambientLight intensity={0.8}/>
-            <primitive object={model.scene} scale={1} material/>
-{/* 
-            <Suspense fallback={null}>
-                <LamentConfig/>
-            </Suspense> */}
+           
+            <Lights />
 
+            <Environment map={envMap}/>
+
+            <Suspense fallback={null}>
+                <LamentTS/>
+            </Suspense>
+
+            {/* <LamentConfig/> */}
+            {/* <Float speed={1.4} rotationIntensity={1.5} floatIntensity={2.3}> */}
+                {/* <LamentTS /> */}
+            {/* </Float> */}
+            
+            {/* <ContactShadows position={[0, -0.3, 0]} blur={2.5} scale={20} far={10}/> */}
+
+            {/* <mesh>
+            <planeGeometry />
+            <meshStandardMaterial color="orange" metalness={0.5} roughness={0}/>
+            </mesh> */}
         </>
     )
 

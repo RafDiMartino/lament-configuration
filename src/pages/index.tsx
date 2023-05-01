@@ -6,11 +6,8 @@ import PuzzleBox from 'component/components/PuzzleBox'
 import { Center } from '@react-three/drei'
 import { useControls } from 'leva'
 import * as THREE from 'three'
-export default function Home() {
 
-  // const { color } = useControls({
-  //   color: '#000000'
-  // })
+export default function Home() {
 
   return (
     <>
@@ -36,7 +33,7 @@ export default function Home() {
             position: [ - 4, 3, 6 ]
         } }
       >
-        <color args={['#000000']} attach='background'/>
+        <color args={['#1e1e1e']} attach='background'/>
         <Center>
           <PuzzleBox />
         </Center>
