@@ -1,28 +1,34 @@
 import React from 'react'
-import { useGLTF, OrbitControls, useHelper, useTexture, Plane, Float, ContactShadows, useEnvironment, Environment, Box, CameraShake, } from '@react-three/drei'
+import { meshBounds, OrbitControls, useHelper, useTexture, Plane, Float, ContactShadows, useEnvironment, Environment, Box, CameraShake, } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import { useControls } from 'leva'
-import LamentConfig from './LamentConfig'
 import { useRef, Suspense, useEffect, useState } from 'react'
 import LamentTS from './LamentTS'
 import Lights from './Lights'
 
 
 export default function PuzzleBox(){
-    let test = true
-
-    const handleClick = () => {
-        test = !test
-        setRotation({
-            autoRotate: !test
-        })
-        
-        console.log(test);
-    }
-    const [autoRotate, setRotation] = useState({
-        autoRotate: test
-    })
     
+    let test = true
+    
+    const [autoRotation, setRotation] = useState({autoRotate:true})
+    console.log(autoRotation)
+    const handleClick = (event: { stopPropagation: () => void; object: { name: any } }) => {
+        event.stopPropagation()
+        // test = !test
+        setRotation((autoRotation) => ({...autoRotation, autoRotate: test}))
+        console.log(event.object.name)
+        test = !test
+    }
+
+    const handleDoubleClick = (event: { stopPropagation: () => void; object: { name: any } }) => {
+        event.stopPropagation()
+        // test = !test
+        setRotation((autoRotation) => ({...autoRotation, autoRotate: test}))
+        console.log(event.object.name)
+        test = !test
+    }
+
     // const model = useGLTF('./lament-final-opt.glb')    
 
     // const envMap = useEnvironment({files: './syferfontein_18d_clear_puresky_2k.hdr'})
@@ -33,14 +39,25 @@ export default function PuzzleBox(){
         <>
             <Perf position="top-left" />
 
-            <OrbitControls makeDefault maxDistance={20} minDistance={5} {...autoRotate}/>
-           
+            <OrbitControls makeDefault maxDistance={20} minDistance={5} {...autoRotation}/>
+
             <Lights/>
 
             <Environment map={envMap}/>
 
+            {/* <Suspense fallback={null}>
+                <LamentTS position={[0, -1, 0]} onClick={handleClick} />
+            </Suspense> */}
+
             <Suspense fallback={null}>
-                <LamentTS position={[0, -1, 0]} onClick={handleClick}/>
+                <LamentTS 
+                    // raycast={meshBounds}
+                    position={[0, -1, 0]} 
+                    onClick={handleClick}
+                    onDoubleClick={handleDoubleClick}
+                    onPointerEnter={() => document.body.style.cursor = 'pointer'} 
+                    onPointerLeave={() => document.body.style.cursor = 'default'} 
+                />
             </Suspense>
 
             {/* <LamentConfig/> */}
