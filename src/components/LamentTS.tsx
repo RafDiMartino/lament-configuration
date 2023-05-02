@@ -29,13 +29,13 @@ export default function LamentTS(props: JSX.IntrinsicElements['group']) {
 
   return ( 
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Cube.geometry} material={materials.wood272k} position={[0, 1.01, 0]} />
-      <mesh geometry={nodes.Face1.geometry} material={materials.brass4k} position={[0.01, 2.01, 0]} scale={[18.65, 7.06, 18.66]} />
-      <mesh geometry={nodes.Face3.geometry} material={materials.brass4k} position={[-1, 1.01, -0.03]} rotation={[0, 0, -Math.PI / 2]} scale={[18.7, 0.19, 18.66]} />
-      <mesh geometry={nodes.Face4.geometry} material={materials.brass4k} position={[0, 1.02, 1]} rotation={[Math.PI / 2, -Math.PI / 2, 0]} scale={[18.65, 0.16, 18.65]} />
-      <mesh geometry={nodes.Face5.geometry} material={materials.brass4k} position={[1, 1.02, -0.03]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[18.65, 0.15, 18.66]} />
-      <mesh geometry={nodes.Face6.geometry} material={materials.brass4k} position={[-0.02, 1.02, -1]} rotation={[Math.PI / 2, -Math.PI / 2, 0]} scale={[18.65, 0.12, 18.66]} />
-      <mesh geometry={nodes.Face2.geometry} material={materials.brass4k} position={[0.01, 0.01, 0]} scale={[18.65, 7.06, 18.66]} />
+      <mesh castShadow geometry={nodes.Cube.geometry} material={materials.wood272k} position={[0, 1.01, 0]} />
+      <mesh castShadow geometry={nodes.Face1.geometry} material={materials.brass4k} position={[0.01, 2.01, 0]} scale={[18.65, 7.06, 18.66]} />
+      <mesh castShadow geometry={nodes.Face3.geometry} material={materials.brass4k} position={[-1, 1.01, -0.03]} rotation={[0, 0, -Math.PI / 2]} scale={[18.7, 0.19, 18.66]} />
+      <mesh castShadow geometry={nodes.Face4.geometry} material={materials.brass4k} position={[0, 1.02, 1]} rotation={[Math.PI / 2, -Math.PI / 2, 0]} scale={[18.65, 0.16, 18.65]} />
+      <mesh castShadow geometry={nodes.Face5.geometry} material={materials.brass4k} position={[1, 1.02, -0.03]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[18.65, 0.15, 18.66]} />
+      <mesh castShadow geometry={nodes.Face6.geometry} material={materials.brass4k} position={[-0.02, 1.02, -1]} rotation={[Math.PI / 2, -Math.PI / 2, 0]} scale={[18.65, 0.12, 18.66]} />
+      <mesh castShadow geometry={nodes.Face2.geometry} material={materials.brass4k} position={[0.01, 0.01, 0]} scale={[18.65, 7.06, 18.66]} />
     </group>
   )
 }

@@ -26,7 +26,7 @@ export default function Lights(){
             max: 10,
             step: 0.1,
         },
-        position: [2, 0, 3]
+        position: [0, 4, 0]
     })
     const poiLightRef = useRef<PointLight>(null!)
     const dirLightRef = useRef<DirectionalLight>(null!)
@@ -51,11 +51,11 @@ export default function Lights(){
                 // decay={0}
             /> */}
             <directionalLight ref={dirLightRef} position={position} castShadow intensity={ dirIntensity } />
-            <directionalLight ref={dirLightRef2} position={[0, -2, 0]} color={''} castShadow intensity={ dirIntensity } />
+            {/* <directionalLight ref={dirLightRef2} position={[0, -2, 0]} color={''} castShadow intensity={ dirIntensity } /> */}
             <ambientLight intensity={ambientIntensity} />
             {/* <hemisphereLight args={['blue', 'red', 30]}/> */}
             {/* <primitive object={model.scene} scale={1} material/> */}
-            {/* <rectAreaLight ref={rectAreaRef} args={['white', 10, 20, 20]} position={[0, 1, 5]} rotation={[0, 0, 0]} /> */}
+            {/* <rectAreaLight castShadow ref={rectAreaRef} args={['white', 10, 10, 10]} position={[0, 5, 0]} rotation={[4.7, 0, 0]} /> */}
             {/* <spotLight ref={spotLightRef} position={position} intensity={3} angle={1} penumbra={0} castShadow/> */}
         </>
     )

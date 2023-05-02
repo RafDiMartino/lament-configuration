@@ -1,30 +1,46 @@
-import { useGLTF, OrbitControls, useHelper, useTexture, Plane, Float, ContactShadows, useEnvironment, Environment } from '@react-three/drei'
+import React from 'react'
+import { useGLTF, OrbitControls, useHelper, useTexture, Plane, Float, ContactShadows, useEnvironment, Environment, Box, CameraShake, } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import { useControls } from 'leva'
 import LamentConfig from './LamentConfig'
-import { useRef, Suspense } from 'react'
+import { useRef, Suspense, useEffect, useState } from 'react'
 import LamentTS from './LamentTS'
 import Lights from './Lights'
 
+
 export default function PuzzleBox(){
+    let test = true
 
-    const model = useGLTF('./lament-final-opt.glb')    
+    const handleClick = () => {
+        test = !test
+        setRotation({
+            autoRotate: !test
+        })
+        
+        console.log(test);
+    }
+    const [autoRotate, setRotation] = useState({
+        autoRotate: test
+    })
+    
+    // const model = useGLTF('./lament-final-opt.glb')    
 
-    // const envMap = useEnvironment({files: './neon_photostudio_2k.hdr'})
+    // const envMap = useEnvironment({files: './syferfontein_18d_clear_puresky_2k.hdr'})
+
     const envMap = useEnvironment({path: './enviroment'})
 
     return(
         <>
             <Perf position="top-left" />
 
-            <OrbitControls makeDefault />
+            <OrbitControls makeDefault maxDistance={20} minDistance={5} {...autoRotate}/>
            
-            {/* <Lights /> */}
+            <Lights/>
 
-            <Environment map={envMap} />
+            <Environment map={envMap}/>
 
             <Suspense fallback={null}>
-                <LamentTS/>
+                <LamentTS position={[0, -1, 0]} onClick={handleClick}/>
             </Suspense>
 
             {/* <LamentConfig/> */}
@@ -33,11 +49,16 @@ export default function PuzzleBox(){
             {/* </Float> */}
             
             {/* <ContactShadows position={[0, -0.3, 0]} blur={2.5} scale={20} far={10}/> */}
-
-            {/* <mesh>
-            <planeGeometry />
-            <meshStandardMaterial color="orange" metalness={0.5} roughness={0}/>
+            {/* <mesh ref={cube} scale={2} onClick={handleClick}>
+                <boxGeometry />
+                <meshStandardMaterial color="orange" metalness={1} roughness={0}/>
             </mesh> */}
+
+            {/* <Plane receiveShadow position={[0,-1, 0]} rotation={[20.42, -3.14, 0,]} scale={5}>
+                <meshStandardMaterial color="orange" metalness={0} roughness={0}/>
+            </Plane> */}
+
+
         </>
     )
 
