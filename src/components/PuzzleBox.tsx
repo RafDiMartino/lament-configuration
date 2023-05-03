@@ -5,6 +5,7 @@ import { useControls } from 'leva'
 import { useRef, Suspense, useEffect, useState } from 'react'
 import LamentTS from './LamentTS'
 import Lights from './Lights'
+import { Group } from 'three'
 
 
 export default function PuzzleBox(){
@@ -33,10 +34,9 @@ export default function PuzzleBox(){
 
     // const envMap = useEnvironment({files: './syferfontein_18d_clear_puresky_2k.hdr'})
 
-    // const envMap = useEnvironment({path: './enviroment'})
+    const envMap = useEnvironment({path: './enviroment'})
 
     
-
     return(
         <>
             <Perf position="top-left" />
@@ -46,7 +46,7 @@ export default function PuzzleBox(){
             
             <Lights/>
 
-            {/* <Environment map={envMap} background blur={0.5}/> */}
+            <Environment map={envMap} background blur={0.5}/>
 
             <Suspense fallback={null}>
                 <LamentTS 

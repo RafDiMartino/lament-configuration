@@ -9,7 +9,7 @@ export default function Lights(){
     
     const { ambientIntensity, pointIntensity, dirIntensity, position, position2, position3, position4, position5, position6 } = useControls({
         ambientIntensity: {
-            value: 0.8,
+            value: 0.5,
             min: 0,
             max: 10,
             step: 0.1,
@@ -64,11 +64,11 @@ export default function Lights(){
                 // decay={0}
             /> */}
             <directionalLight ref={dirLightRef} position={position} castShadow intensity={ dirIntensity } />
-            <directionalLight ref={dirLightRef2} position={position2} color={''} castShadow intensity={ dirIntensity } />
+            {/* <directionalLight ref={dirLightRef2} position={position2} color={''} castShadow intensity={ dirIntensity } />
             <directionalLight ref={dirLightRef3} position={position3} castShadow intensity={ dirIntensity } />
             <directionalLight ref={dirLightRef4} position={position4} castShadow intensity={ dirIntensity } />
             <directionalLight ref={dirLightRef5} position={position5} castShadow intensity={ dirIntensity } />
-            <directionalLight ref={dirLightRef6} position={position6} castShadow intensity={ dirIntensity } />
+            <directionalLight ref={dirLightRef6} position={position6} castShadow intensity={ dirIntensity } /> */}
             
             <ambientLight intensity={ambientIntensity} />
             {/* <hemisphereLight args={['blue', 'red', 30]}/> */}
