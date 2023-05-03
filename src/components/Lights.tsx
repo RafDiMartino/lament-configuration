@@ -7,9 +7,9 @@ import * as THREE from 'three'
 
 export default function Lights(){
     
-    const { ambientIntensity, pointIntensity, dirIntensity, position } = useControls({
+    const { ambientIntensity, pointIntensity, dirIntensity, position, position2, position3, position4, position5, position6 } = useControls({
         ambientIntensity: {
-            value: 1,
+            value: 0.8,
             min: 0,
             max: 10,
             step: 0.1,
@@ -21,21 +21,34 @@ export default function Lights(){
             step: 0.1,
         },
         dirIntensity: {
-            value: 1,
+            value: 0.5,
             min: 0,
             max: 10,
             step: 0.1,
         },
-        position: [0, 4, 0]
+        position: [4, 0, 0],
+        position2: [-4, 0, 0],
+        position3: [0, 4, 0],
+        position4: [0, -4, 0],
+        position5: [0, 0, -4],
+        position6: [0, 0, 4]
     })
     const poiLightRef = useRef<PointLight>(null!)
     const dirLightRef = useRef<DirectionalLight>(null!)
     const dirLightRef2 = useRef<DirectionalLight>(null!)
+    const dirLightRef3 = useRef<DirectionalLight>(null!)
+    const dirLightRef4 = useRef<DirectionalLight>(null!)
+    const dirLightRef5 = useRef<DirectionalLight>(null!)
+    const dirLightRef6 = useRef<DirectionalLight>(null!)
     const rectAreaRef = useRef<RectAreaLight>(null!)
     const spotLightRef = useRef<SpotLight>(null!)
     useHelper(poiLightRef, PointLightHelper, 1, "red")
     useHelper(dirLightRef, DirectionalLightHelper, 1, "red")
     useHelper(dirLightRef2, DirectionalLightHelper, 1, "red")
+    useHelper(dirLightRef3, DirectionalLightHelper, 1, "red")
+    useHelper(dirLightRef4, DirectionalLightHelper, 1, "red")
+    useHelper(dirLightRef5, DirectionalLightHelper, 1, "red")
+    useHelper(dirLightRef6, DirectionalLightHelper, 1, "red")
     useHelper(rectAreaRef, RectAreaLightHelper, "white")
     useHelper(spotLightRef, SpotLightHelper, "red")
 
@@ -51,7 +64,12 @@ export default function Lights(){
                 // decay={0}
             /> */}
             <directionalLight ref={dirLightRef} position={position} castShadow intensity={ dirIntensity } />
-            {/* <directionalLight ref={dirLightRef2} position={[0, -2, 0]} color={''} castShadow intensity={ dirIntensity } /> */}
+            <directionalLight ref={dirLightRef2} position={position2} color={''} castShadow intensity={ dirIntensity } />
+            <directionalLight ref={dirLightRef3} position={position3} castShadow intensity={ dirIntensity } />
+            <directionalLight ref={dirLightRef4} position={position4} castShadow intensity={ dirIntensity } />
+            <directionalLight ref={dirLightRef5} position={position5} castShadow intensity={ dirIntensity } />
+            <directionalLight ref={dirLightRef6} position={position6} castShadow intensity={ dirIntensity } />
+            
             <ambientLight intensity={ambientIntensity} />
             {/* <hemisphereLight args={['blue', 'red', 30]}/> */}
             {/* <primitive object={model.scene} scale={1} material/> */}
