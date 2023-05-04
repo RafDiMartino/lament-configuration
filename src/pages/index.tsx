@@ -6,6 +6,8 @@ import PuzzleBox from '../components/PuzzleBox'
 import { Center, PerspectiveCamera } from '@react-three/drei'
 import { useControls } from 'leva'
 import * as THREE from 'three'
+import { Suspense } from 'react'
+import Loader from 'component/components/Loader'
 
 export default function Home() {
 
@@ -28,26 +30,28 @@ export default function Home() {
         <link rel="icon" href="./favicon.ico" />
       </Head>
       
-      <Canvas
-        gl={{ antialias: true, toneMapping: THREE.NoToneMapping, alpha: false }}
-        // colorManagement={false}
-        flat
-        // linear
-        shadows
-        camera={ {
-            fov: 45,
-            near: 0.01,
-            far: 200,
-            position: [ - 4, 3, 6 ]
-        } }
-      >
-        {/* <CameraHelper /> */}
-        <color args={['#1e1e1e']} attach='background'/>
-        <Center>
-          <PuzzleBox />
-        </Center>
-
-      </Canvas>
+      
+        <Canvas
+          gl={{ antialias: true, toneMapping: THREE.NoToneMapping, alpha: false }}
+          // colorManagement={false}
+          flat
+          // linear
+          shadows
+          camera={ {
+              fov: 45,
+              near: 0.01,
+              far: 200,
+              position: [ - 4, 3, 6 ]
+          } }
+        >
+          <Suspense fallback={<Loader />}>
+            {/* <CameraHelper /> */}
+            <color args={['#1e1e1e']} attach='background'/>
+            <Center>
+              <PuzzleBox />
+            </Center>
+          </Suspense>
+        </Canvas>
     </>
 
   )
