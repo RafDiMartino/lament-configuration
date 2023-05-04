@@ -8,7 +8,6 @@ import { useControls } from 'leva'
 import * as THREE from 'three'
 import { Suspense } from 'react'
 import Loader from 'component/components/Loader'
-
 export default function Home() {
 
   // function CameraHelper() {
@@ -44,15 +43,18 @@ export default function Home() {
               position: [ - 4, 3, 6 ]
           } }
         >
+          <color args={['#6B6A67']} attach='background'/>
+
           <Suspense fallback={<Loader />}>
-            {/* <CameraHelper /> */}
-            <color args={['#1e1e1e']} attach='background'/>
-            <Center>
+
+            <Center >
               <PuzzleBox />
             </Center>
-          </Suspense>
-        </Canvas>
-    </>
 
+          </Suspense>
+          
+        </Canvas>
+        {/* <Loader /> */}
+    </>
   )
 }

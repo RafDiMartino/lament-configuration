@@ -5,11 +5,10 @@ Command: npx gltfjsx@6.1.4 public/lament-final-opt.glb -t -r public
 
 import * as THREE from 'three'
 import React, { useRef, useState } from 'react'
-import { useGLTF } from '@react-three/drei'
+import { useGLTF, Html } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { Group } from 'three'
 import { useFrame } from '@react-three/fiber'
-import { useSpring, animated } from '@react-spring/three'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -45,7 +44,8 @@ export default function LamentTS(props: JSX.IntrinsicElements['group']) {
   // const { scale } = useSpring({ scale: active ? 1.5 : 1 })
   
   return ( 
-    <animated.group {...props} dispose={null} onClick={handleRotation} ref={cube}>
+
+    <group {...props} dispose={null} onClick={handleRotation} ref={cube}>
       <mesh name='Cube' castShadow geometry={nodes.Cube.geometry} material={materials.wood272k} position={[0, 1.01, 0]} />
       <mesh name='Face1' castShadow geometry={nodes.Face1.geometry} material={materials.brass4k} position={[0.01, 2.01, 0]} scale={[18.65, 7.06, 18.66]} />
       <mesh name='Face2' castShadow geometry={nodes.Face3.geometry} material={materials.brass4k} position={[-1, 1.01, -0.03]} rotation={[0, 0, -Math.PI / 2]} scale={[18.7, 0.19, 18.66]} />
@@ -53,7 +53,7 @@ export default function LamentTS(props: JSX.IntrinsicElements['group']) {
       <mesh name='Face4' castShadow geometry={nodes.Face5.geometry} material={materials.brass4k} position={[1, 1.02, -0.03]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[18.65, 0.15, 18.66]} />
       <mesh name='Face5' castShadow geometry={nodes.Face6.geometry} material={materials.brass4k} position={[-0.02, 1.02, -1]} rotation={[Math.PI / 2, -Math.PI / 2, 0]} scale={[18.65, 0.12, 18.66]} />
       <mesh name='Face6' castShadow geometry={nodes.Face2.geometry} material={materials.brass4k} position={[0.01, 0.01, 0]} scale={[18.65, 7.06, 18.66]} />
-    </animated.group>
+    </group>
   )
 }
 
