@@ -63,18 +63,19 @@ export default function Lights(){
                 // distance={10}
                 // decay={0}
             /> */}
-            <directionalLight ref={dirLightRef} position={position} castShadow intensity={ dirIntensity } />
+            <directionalLight ref={dirLightRef} position={position} castShadow shadow-mapSize-height={1024} shadow-bias={1} shadow-mapSize-width={1024} intensity={ dirIntensity } />
             {/* <directionalLight ref={dirLightRef2} position={position2} color={''} castShadow intensity={ dirIntensity } />
             <directionalLight ref={dirLightRef3} position={position3} castShadow intensity={ dirIntensity } />
             <directionalLight ref={dirLightRef4} position={position4} castShadow intensity={ dirIntensity } />
             <directionalLight ref={dirLightRef5} position={position5} castShadow intensity={ dirIntensity } />
             <directionalLight ref={dirLightRef6} position={position6} castShadow intensity={ dirIntensity } /> */}
             
-            <ambientLight intensity={ambientIntensity} />
+            <ambientLight intensity={ambientIntensity} castShadow/>
             {/* <hemisphereLight args={['blue', 'red', 30]}/> */}
             {/* <primitive object={model.scene} scale={1} material/> */}
             {/* <rectAreaLight castShadow ref={rectAreaRef} args={['white', 10, 10, 10]} position={[0, 5, 0]} rotation={[4.7, 0, 0]} /> */}
             {/* <spotLight ref={spotLightRef} position={position} intensity={3} angle={1} penumbra={0} castShadow/> */}
+        
         </>
     )
 }

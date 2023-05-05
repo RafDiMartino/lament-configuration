@@ -8,6 +8,7 @@ import { useControls } from 'leva'
 import * as THREE from 'three'
 import { Suspense } from 'react'
 import Loader from 'component/components/Loader'
+import Test from 'component/components/Test'
 
 export default function Home() {
 
@@ -32,11 +33,11 @@ export default function Home() {
       
       
         <Canvas
-          gl={{ antialias: true, toneMapping: THREE.NoToneMapping, alpha: false }}
+          gl={{ antialias: true, toneMapping: THREE.ACESFilmicToneMapping, alpha: false, outputEncoding: THREE.sRGBEncoding }}
           // colorManagement={false}
           flat
           // linear
-          shadows
+          shadows={true}
           camera={ {
               fov: 45,
               near: 0.01,
@@ -50,6 +51,7 @@ export default function Home() {
 
             <Center >
               <PuzzleBox />
+              {/* <Test /> */}
             </Center>
 
           </Suspense>
