@@ -8,7 +8,6 @@ import { useControls } from 'leva'
 import * as THREE from 'three'
 import { Suspense } from 'react'
 import Loader from 'component/components/Loader'
-import Test from 'component/components/Test'
 
 export default function Home() {
 

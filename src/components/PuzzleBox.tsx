@@ -46,7 +46,7 @@ export default function PuzzleBox(){
             
             <Lights/>
 
-            <Environment map={envMap} background blur={0.5} resolution={1024} />
+            {/* <Environment map={envMap} background blur={0.5} resolution={1024} /> */}
 
             <LamentTS 
                 // raycast={meshBounds}
