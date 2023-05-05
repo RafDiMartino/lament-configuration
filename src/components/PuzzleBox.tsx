@@ -48,16 +48,14 @@ export default function PuzzleBox(){
 
             <Environment map={envMap} background blur={0.5}/>
 
-            <Suspense fallback={null}>
-                <LamentTS 
-                    // raycast={meshBounds}
-                    position={[0, -1, 0]} 
-                    // onClick={handleClick}
-                    // onDoubleClick={handleDoubleClick}
-                    onPointerEnter={() => document.body.style.cursor = 'pointer'} 
-                    onPointerLeave={() => document.body.style.cursor = 'default'} 
-                />
-            </Suspense>
+            <LamentTS 
+                // raycast={meshBounds}
+                position={[0, -1, 0]} 
+                // onClick={handleClick}
+                // onDoubleClick={handleDoubleClick}
+                onPointerEnter={() => document.body.style.cursor = 'pointer'} 
+                onPointerLeave={() => document.body.style.cursor = 'default'} 
+            />
 
         </>
     )

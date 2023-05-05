@@ -19,8 +19,7 @@ canvas {
   height: 100vh;
 }
 
-img{
-  width: 300px;
+.loader{
   animation: rotation 6s infinite linear;
 }
 

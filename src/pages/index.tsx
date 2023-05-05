@@ -8,6 +8,7 @@ import { useControls } from 'leva'
 import * as THREE from 'three'
 import { Suspense } from 'react'
 import Loader from 'component/components/Loader'
+
 export default function Home() {
 
   // function CameraHelper() {
@@ -52,9 +53,9 @@ export default function Home() {
             </Center>
 
           </Suspense>
-          
+          {/* <Loader /> */}
         </Canvas>
-        {/* <Loader /> */}
+
     </>
   )
 }

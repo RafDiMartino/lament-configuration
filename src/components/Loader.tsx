@@ -8,10 +8,10 @@ export default function Loader(){
 
         // <Html center>{progress} % loaded</Html>
 
-        <Html center>
-            <div >
-                <span>{ progress }</span>
-                <img src="./box.png" alt="Loader" />
+        <Html center >
+            <div className="w-32">
+                <span className="hidden">{ progress }</span>
+                <img className='loader' src="./box.png" alt="Loader" />
             </div>
         </Html>
     )
