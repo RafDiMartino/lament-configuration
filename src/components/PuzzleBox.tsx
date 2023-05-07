@@ -1,11 +1,12 @@
 import React from 'react'
-import { meshBounds, OrbitControls, useHelper, useTexture, Plane, Float, ContactShadows, useEnvironment, Environment, Box, CameraShake, TrackballControls, } from '@react-three/drei'
+import { Tetrahedron, meshBounds, OrbitControls, useHelper, useTexture, Plane, Float, ContactShadows, useEnvironment, Environment, Box, CameraShake, TrackballControls, } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 import { useControls } from 'leva'
 import { useRef, Suspense, useEffect, useState } from 'react'
 import LamentTS from './LamentTS'
 import Lights from './Lights'
 import * as THREE from 'three'
+import { useLoader } from '@react-three/fiber'
 
 
 export default function PuzzleBox(){
@@ -32,11 +33,9 @@ export default function PuzzleBox(){
 
     // const model = useGLTF('./lament-final-opt.glb')    
 
-    // const envMap = useEnvironment({files: './syferfontein_18d_clear_puresky_2k.hdr'})
+    // const envMap = useEnvironment({files: './kloppenheim_02_2k.hdr'})
 
     const envMap = useEnvironment({path: './enviroment', encoding: THREE.sRGBEncoding})
-
-    
     return(
         <>
             <Perf position="top-left" />
@@ -46,7 +45,7 @@ export default function PuzzleBox(){
             
             <Lights/>
 
-            {/* <Environment map={envMap} background blur={0.5} resolution={1024} /> */}
+            <Environment map={envMap} background blur={0.5} resolution={1024} />
 
             <LamentTS 
                 // raycast={meshBounds}
@@ -56,7 +55,6 @@ export default function PuzzleBox(){
                 onPointerEnter={() => document.body.style.cursor = 'pointer'} 
                 onPointerLeave={() => document.body.style.cursor = 'default'} 
             />
-
         </>
     )
 

@@ -7,7 +7,7 @@ import { Center, PerspectiveCamera } from '@react-three/drei'
 import { useControls } from 'leva'
 import * as THREE from 'three'
 import { Suspense } from 'react'
-import Loader from 'component/components/Loader'
+import Loaders from 'component/components/Loaders'
 
 export default function Home() {
 
@@ -46,7 +46,7 @@ export default function Home() {
         >
           <color args={['#6B6A67']} attach='background'/>
 
-          <Suspense fallback={<Loader />}>
+          <Suspense fallback={<Loaders />}>
 
             <Center >
               <PuzzleBox />
