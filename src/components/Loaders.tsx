@@ -6,8 +6,6 @@ export default function Loaders(){
     
     return (
 
-        // <Html center>{progress} % loaded</Html>
-
         <Html center >
             <div className="w-32">
                 <Loader containerStyles={{backgroundColor: "rgba(255, 255, 255, 0)", position: "absolute", top: "100px"}}/>
