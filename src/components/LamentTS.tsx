@@ -30,7 +30,7 @@ export default function LamentTS(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/lament-final-opt.glb') as GLTFResult
 
   const cube = useRef<Group>(null!)
-  const [active, setActive] = useState(false)
+  const [active, setActive] = useState(true)
 
   useFrame((state, delta) => {
     active ? cube.current.rotation.y += delta * 0.2 : cube.current.rotation.y += 0
