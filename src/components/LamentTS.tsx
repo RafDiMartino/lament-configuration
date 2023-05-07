@@ -40,8 +40,6 @@ export default function LamentTS(props: JSX.IntrinsicElements['group']) {
     event.stopPropagation()
     setActive(!active)
   }
-
-  // const { scale } = useSpring({ scale: active ? 1.5 : 1 })
   
   return ( 
 
