@@ -42,7 +42,7 @@ export function Cube(props: JSX.IntrinsicElements['group']) {
   }
 
   return (
-    <group {...props} dispose={null} onClick={handleRotation} ref={cube} scale={1.3}>
+    <group {...props} dispose={null} onClick={handleRotation} ref={cube}>
       <mesh name='cube' receiveShadow geometry={nodes.cube.geometry} material={materials.wood272k} position={[0, 1.01, 0]} />
       <mesh name='face1' castShadow geometry={nodes.face1.geometry} material={materials.brass2k} position={[0, 2.01, 0]} scale={[18.65, 0.47, 18.66]} />
       <mesh name='face2' castShadow geometry={nodes.face3.geometry} material={materials.brass2k} position={[-1, 1, -0.03]} rotation={[0, 0, -Math.PI / 2]} scale={[18.7, 0.09, 18.66]} />
