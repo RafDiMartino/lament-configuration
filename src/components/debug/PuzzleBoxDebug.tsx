@@ -1,9 +1,10 @@
 import React from 'react'
 import { meshBounds, OrbitControls, useEnvironment, Environment } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
-import LamentTS from '../LamentTS'
+import Lament4k from '../Lament4k'
 import LightsDebug from './LightsDebug'
 import * as THREE from 'three'
+import { Lament2k } from '../Lament2k'
 
 export default function PuzzleBoxDebug(){
 
@@ -22,7 +23,13 @@ export default function PuzzleBoxDebug(){
 
             <Environment map={envMap} background blur={0.5} resolution={1024} />
 
-            <LamentTS 
+            {/* <Lament4k
+                raycast={meshBounds}
+                position={[0, -1, 0]} 
+                onPointerEnter={() => document.body.style.cursor = 'pointer'} 
+                onPointerLeave={() => document.body.style.cursor = 'default'} 
+            /> */}
+            <Lament2k 
                 raycast={meshBounds}
                 position={[0, -1, 0]} 
                 onPointerEnter={() => document.body.style.cursor = 'pointer'} 
