@@ -27,7 +27,7 @@ export default function LightsDebug(){
             step: 0.1,
         },
         position: [-3.41, -1.45, 1.49],
-        position2: [2.1, 0.2, -3.0],
+        position2: [2.1, 0.7, -3.0],
         position3: [2.76, -1.6, 2.68],
 
     })

@@ -3,6 +3,7 @@ import { meshBounds, OrbitControls, useEnvironment, Environment } from '@react-t
 import Lights from './Lights'
 import * as THREE from 'three'
 import { Lament2k } from './Lament2k'
+import { Cube } from './Cube'
 
 export default function PuzzleBox(){
 
@@ -16,7 +17,7 @@ export default function PuzzleBox(){
 
             <Environment map={envMap} background blur={0.5} resolution={256} />
 
-            <Lament2k 
+            <Cube
                 raycast={meshBounds}
                 position={[0, -1, 0]} 
                 onPointerEnter={() => document.body.style.cursor = 'pointer'} 

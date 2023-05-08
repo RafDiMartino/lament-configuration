@@ -4,6 +4,7 @@ import { Perf } from 'r3f-perf'
 import LightsDebug from './LightsDebug'
 import * as THREE from 'three'
 import { Lament2k } from '../Lament2k'
+import { Cube } from '../Cube'
 
 export default function PuzzleBoxDebug(){
 
@@ -22,7 +23,7 @@ export default function PuzzleBoxDebug(){
 
             <Environment map={envMap} background blur={0.5} resolution={1024} />
 
-            <Lament2k 
+            <Cube
                 raycast={meshBounds}
                 position={[0, -1, 0]} 
                 onPointerEnter={() => document.body.style.cursor = 'pointer'} 

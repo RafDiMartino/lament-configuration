@@ -42,7 +42,7 @@ export function Lament2k(props: JSX.IntrinsicElements['group']) {
   }
 
   return (
-    <group {...props} dispose={null} onClick={handleRotation} ref={cube}>
+    <group {...props} dispose={null} onClick={handleRotation} ref={cube} scale={1.3}>
       <mesh name='Cube' receiveShadow geometry={nodes.Cube.geometry} material={materials.wood272k} position={[0, 1.01, 0]} />
       <mesh name='Face1' castShadow geometry={nodes.Face1.geometry} material={materials.brass2k} position={[0.01, 2.01, 0]} scale={[18.65, 7.06, 18.66]} />
       <mesh name='Face2' castShadow geometry={nodes.Face3.geometry} material={materials.brass2k} position={[-1, 1.01, -0.03]} rotation={[0, 0, -Math.PI / 2]} scale={[18.7, 0.19, 18.66]} />
