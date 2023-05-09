@@ -28,17 +28,23 @@ type GLTFResult = GLTF & {
 
 export function Model(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/lament-redone.glb') as GLTFResult
-  const [active, setActive] = useState(true)
+  const [active, setActive] = useState(false)
+  const [playing, setPlaying] = useState(true);
   const cube = useRef<Group>(null!)
   
   useFrame((state, delta) => {
     active ? cube.current.rotation.y += delta * 0.2 : cube.current.rotation.y += 0
   })
 
+  const chainsSound = useRef(new Audio("./audio/The_Lament_Configuration.mp3"))
+
   const handleRotation = (event: any) => {
     event.stopPropagation()
     setActive(!active)
+    playing ? chainsSound.current.play() : chainsSound.current.load();
+    setPlaying(!playing)
   }
+  
   return (
     <group {...props} dispose={null} onClick={handleRotation} ref={cube}>
       <mesh name='cube' geometry={nodes.cube.geometry} material={materials.wood272k} position={[0, 1.01, 0]} />
