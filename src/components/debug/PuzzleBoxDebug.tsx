@@ -3,8 +3,6 @@ import { meshBounds, OrbitControls, useEnvironment, Environment } from '@react-t
 import { Perf } from 'r3f-perf'
 import LightsDebug from './LightsDebug'
 import * as THREE from 'three'
-import { Lament2k } from '../Lament2k'
-import { Cube } from '../Cube'
 import { Model } from '../Model'
 
 export default function PuzzleBoxDebug(){

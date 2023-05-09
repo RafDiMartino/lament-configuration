@@ -42,13 +42,13 @@ export function Model(props: JSX.IntrinsicElements['group']) {
 
   return (
     <group {...props} dispose={null} onClick={handleRotation} ref={cube}>
-      <mesh name='cube' receiveShadow geometry={nodes.cube.geometry} material={materials.wood272k} position={[0, 1.01, 0]} />
-      <mesh name='face1' castShadow geometry={nodes.face1.geometry} material={materials.brass2k} position={[0.001, 2.01, -0.003]} scale={[18.65, 0.47, 18.66]} />
-      <mesh name='face2' castShadow geometry={nodes.face3.geometry} material={materials.brass2k} position={[-1, 1.005, -0.03]} rotation={[0, 0, -Math.PI / 2]} scale={[18.7, 0.09, 18.66]} />
-      <mesh name='face3' castShadow geometry={nodes.face4.geometry} material={materials.brass2k} position={[0.015, 1.015, 1]} rotation={[Math.PI / 2, -Math.PI / 2, 0]} scale={[18.65, 0.12, 18.66]} />
-      <mesh name='face4' castShadow geometry={nodes.face6.geometry} material={materials.brass2k} position={[-0.0215, 1.02, -1]} rotation={[1.57, -1.57, 0]} scale={[18.65, 0.14, 18.66]} />
-      <mesh name='face5' castShadow geometry={nodes.face2.geometry} material={materials.brass2k} position={[0.0015, 0.015, -0.005]} scale={[18.65, 1.05, 18.66]} />
-      <mesh name='face6' castShadow geometry={nodes.face5.geometry} material={materials.brass2k} position={[1, 1.02, -0.03]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[18.65, 0.14, 18.66]} />
+      <mesh name='cube'  geometry={nodes.cube.geometry} material={materials.wood272k} position={[0, 1.01, 0]} />
+      <mesh name='face1' geometry={nodes.face1.geometry} material={materials.brass2k} position={[0.001, 2.01, -0.003]} scale={[18.65, 0.47, 18.66]} />
+      <mesh name='face2' geometry={nodes.face3.geometry} material={materials.brass2k} position={[-1, 1.005, -0.03]} rotation={[0, 0, -Math.PI / 2]} scale={[18.7, 0.09, 18.66]} />
+      <mesh name='face3' geometry={nodes.face4.geometry} material={materials.brass2k} position={[0.015, 1.015, 1]} rotation={[Math.PI / 2, -Math.PI / 2, 0]} scale={[18.65, 0.12, 18.66]} />
+      <mesh name='face4' geometry={nodes.face6.geometry} material={materials.brass2k} position={[-0.0215, 1.02, -1]} rotation={[1.57, -1.57, 0]} scale={[18.65, 0.14, 18.66]} />
+      <mesh name='face5' geometry={nodes.face2.geometry} material={materials.brass2k} position={[0.0015, 0.015, -0.005]} scale={[18.65, 1.05, 18.66]} />
+      <mesh name='face6' geometry={nodes.face5.geometry} material={materials.brass2k} position={[1, 1.02, -0.03]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={[18.65, 0.14, 18.66]} />
     </group>
   )
 }
