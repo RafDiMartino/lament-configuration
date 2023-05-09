@@ -4,6 +4,7 @@ import Lights from './Lights'
 import * as THREE from 'three'
 import { Lament2k } from './Lament2k'
 import { Cube } from './Cube'
+import { Model } from './Model'
 
 export default function PuzzleBox(){
 
@@ -17,7 +18,7 @@ export default function PuzzleBox(){
 
             <Environment map={envMap} background blur={0.5} resolution={256} />
 
-            <Cube
+            <Model
                 raycast={meshBounds}
                 position={[0, -1, 0]} 
                 onPointerEnter={() => document.body.style.cursor = 'pointer'} 

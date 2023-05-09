@@ -5,6 +5,7 @@ import LightsDebug from './LightsDebug'
 import * as THREE from 'three'
 import { Lament2k } from '../Lament2k'
 import { Cube } from '../Cube'
+import { Model } from '../Model'
 
 export default function PuzzleBoxDebug(){
 
@@ -17,13 +18,14 @@ export default function PuzzleBoxDebug(){
         <>
             <Perf position="top-left" />
 
-            <OrbitControls makeDefault maxDistance={20} minDistance={5} />
+            <OrbitControls makeDefault  />
+            {/* maxDistance={20} minDistance={5} */}
             
             <LightsDebug/>
 
             <Environment map={envMap} background blur={0.5} resolution={1024} />
 
-            <Cube
+            <Model
                 raycast={meshBounds}
                 position={[0, -1, 0]} 
                 onPointerEnter={() => document.body.style.cursor = 'pointer'} 
